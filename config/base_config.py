@@ -11,7 +11,7 @@
 
 # 基础配置
 PLATFORM = "xhs"
-KEYWORDS = "天赐温泉"  # 关键词搜索配置，以英文逗号分隔
+KEYWORDS = "杭州别墅租赁"  # 关键词搜索配置，以英文逗号分隔
 LOGIN_TYPE = "qrcode"  # qrcode or phone or cookie
 COOKIES = ""
 # 具体值参见media_platform.xxx.field下的枚举值，暂时只支持小红书
@@ -73,60 +73,9 @@ CRAWLER_MAX_COMMENTS_COUNT_SINGLENOTES = 10
 # 老版本项目使用了 db, 则需参考 schema/tables.sql line 287 增加表字段
 ENABLE_GET_SUB_COMMENTS = False
 
-# 已废弃⚠️⚠️⚠️指定小红书需要爬虫的笔记ID列表
-# 已废弃⚠️⚠️⚠️ 指定笔记ID笔记列表会因为缺少xsec_token和xsec_source参数导致爬取失败
-# XHS_SPECIFIED_ID_LIST = [
-#     "66fad51c000000001b0224b8",
-#     # ........................
-# ]
-
 # 指定小红书需要爬虫的笔记URL列表, 目前要携带xsec_token和xsec_source参数
 XHS_SPECIFIED_NOTE_URL_LIST = [
     "https://www.xiaohongshu.com/explore/66fad51c000000001b0224b8?xsec_token=AB3rO-QopW5sgrJ41GwN01WCXh6yWPxjSoFI9D5JIMgKw=&xsec_source=pc_search"
-    # ........................
-]
-
-# 指定抖音需要爬取的ID列表
-DY_SPECIFIED_ID_LIST = [
-    "7280854932641664319",
-    "7202432992642387233",
-    # ........................
-]
-
-# 指定快手平台需要爬取的ID列表
-KS_SPECIFIED_ID_LIST = ["3xf8enb8dbj6uig", "3x6zz972bchmvqe"]
-
-# 指定B站平台需要爬取的视频bvid列表
-BILI_SPECIFIED_ID_LIST = [
-    "BV1d54y1g7db",
-    "BV1Sz4y1U77N",
-    "BV14Q4y1n7jz",
-    # ........................
-]
-
-# 指定微博平台需要爬取的帖子列表
-WEIBO_SPECIFIED_ID_LIST = [
-    "4982041758140155",
-    # ........................
-]
-
-# 指定weibo创作者ID列表
-WEIBO_CREATOR_ID_LIST = [
-    "5533390220",
-    # ........................
-]
-
-# 指定贴吧需要爬取的帖子列表
-TIEBA_SPECIFIED_ID_LIST = []
-
-# 指定贴吧名称列表，爬取该贴吧下的帖子
-TIEBA_NAME_LIST = [
-    # "盗墓笔记"
-]
-
-# 指定贴吧创作者URL列表
-TIEBA_CREATOR_URL_LIST = [
-    "https://tieba.baidu.com/home/main/?id=tb.1.7f139e2e.6CyEwxu3VJruH_-QqpCi6g&fr=frs",
     # ........................
 ]
 
@@ -142,35 +91,9 @@ DY_CREATOR_ID_LIST = [
     # ........................
 ]
 
-# 指定bili创作者ID列表(sec_id)
-BILI_CREATOR_ID_LIST = [
-    "20813884",
-    # ........................
-]
-
-# 指定快手创作者ID列表
-KS_CREATOR_ID_LIST = [
-    "3x4sm73aye7jq7i",
-    # ........................
-]
-
-
-# 指定知乎创作者主页url列表
-ZHIHU_CREATOR_URL_LIST = [
-    "https://www.zhihu.com/people/yd1234567",
-    # ........................
-]
-
-# 指定知乎需要爬取的帖子ID列表
-ZHIHU_SPECIFIED_ID_LIST = [
-    "https://www.zhihu.com/question/826896610/answer/4885821440", # 回答
-    "https://zhuanlan.zhihu.com/p/673461588", # 文章
-    "https://www.zhihu.com/zvideo/1539542068422144000" # 视频
-]
-
 # 词云相关
 # 是否开启生成评论词云图
-ENABLE_GET_WORDCLOUD = False
+ENABLE_GET_WORDCLOUD = True
 # 自定义词语及其分组
 # 添加规则：xx:yy 其中xx为自定义添加的词组，yy为将xx该词组分到的组名。
 CUSTOM_WORDS = {
@@ -183,14 +106,3 @@ STOP_WORDS_FILE = "./docs/hit_stopwords.txt"
 
 # 中文字体文件路径
 FONT_PATH = "./docs/STZHONGS.TTF"
-
-# 爬取开始的天数，仅支持 bilibili 关键字搜索，YYYY-MM-DD 格式，若为 None 则表示不设置时间范围，按照默认关键字最多返回 1000 条视频的结果处理
-START_DAY = '2024-01-01'
-
-# 爬取结束的天数，仅支持 bilibili 关键字搜索，YYYY-MM-DD 格式，若为 None 则表示不设置时间范围，按照默认关键字最多返回 1000 条视频的结果处理
-END_DAY = '2024-01-01'
-
-# 是否开启按每一天进行爬取的选项，仅支持 bilibili 关键字搜索
-# 若为 False，则忽略 START_DAY 与 END_DAY 设置的值
-# 若为 True，则按照 START_DAY 至 END_DAY 按照每一天进行筛选，这样能够突破 1000 条视频的限制，最大程度爬取该关键词下的所有视频
-ALL_DAY = False
