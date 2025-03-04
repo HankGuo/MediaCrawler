@@ -138,8 +138,8 @@ def new_kuai_daili_proxy() -> KuaiDaiLiProxy:
 
     """
     return KuaiDaiLiProxy(
-        kdl_secret_id=os.getenv("kdl_secret_id", "你的快代理secert_id"),
-        kdl_signature=os.getenv("kdl_signature", "你的快代理签名"),
-        kdl_user_name=os.getenv("kdl_user_name", "你的快代理用户名"),
-        kdl_user_pwd=os.getenv("kdl_user_pwd", "你的快代理密码"),
+        kdl_secret_id=os.getenv("kdl_secret_id", "obtz1jsvi64lnxqiqzt6"),
+        kdl_signature=os.getenv("kdl_signature", "4dcbio2z3ekdjchqatf5shx8zsbyt9vn"),
+        kdl_user_name=os.getenv("kdl_user_name", "d1777809893"),
+        kdl_user_pwd=os.getenv("kdl_user_pwd", "ytnslcdd"),
     )

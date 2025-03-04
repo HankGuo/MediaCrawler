@@ -11,21 +11,19 @@
 
 # 基础配置
 PLATFORM = "xhs"
-KEYWORDS = "杭州别墅租赁"  # 关键词搜索配置，以英文逗号分隔
-LOGIN_TYPE = "qrcode"  # qrcode or phone or cookie
-COOKIES = ""
+KEYWORDS = "转运水晶"  # 关键词搜索配置，以英文逗号分隔
+LOGIN_TYPE = "cookie"  # qrcode or phone or cookie
+COOKIES = "abRequestId=f57ce515-02b3-51b1-91ce-e042fc16f3d1;a1=18e40ced23b382ti6daos4aoq9n5ugffzwxofjcge30000811176;webId=34393c2af6d1ce6e0174f3372cc71b81;gid=yYd48SdfWSuqyYd48SdfJEVSqDqYJ93Kf0lMCkd40lAjIlq827kiii888YyyyWK8WJ420J42;customerClientId=243236499342074;x-user-id-ark.xiaohongshu.com=6518e6b9000000002402e5db;x-user-id-creator.xiaohongshu.com=60056ad4000000000100b578;access-token-creator.xiaohongshu.com=customer.creator.AT-68c517469998758676156666wzoz3qp4jbt9j8vg;galaxy_creator_session_id=EyihCtuXOmrCkxpBGm0j7HgsYvzmPcajPjMK;galaxy.creator.beaker.session.id=1739244619516054800620;xsecappid=xhs-pc-web;webBuild=4.58.0;acw_tc=0a00d49217406475629751877e208786fef95c0c384140008ccbcf6195d508;web_session=040069b171299c56e52ecc64f5354bff9931c9;unread={%22ub%22:%2267bc7124000000000603a275%22%2C%22ue%22:%2267bfca670000000029027b53%22%2C%22uc%22:28};websectiga=10f9a40ba454a07755a08f27ef8194c53637eba4551cf9751c009d9afb564467;sec_poison_id=dc57f9f9-07fd-4074-a332-796260cad5ce;loadts=1740648379193"
 # 具体值参见media_platform.xxx.field下的枚举值，暂时只支持小红书
 SORT_TYPE = "popularity_descending"
-# 具体值参见media_platform.xxx.field下的枚举值，暂时只支持抖音
-PUBLISH_TIME_TYPE = 0
 CRAWLER_TYPE = (
-    "search"  # 爬取类型，search(关键词搜索) | detail(帖子详情)| creator(创作者主页数据)
+    "detail"  # 爬取类型，search(关键词搜索) | detail(帖子详情)| creator(创作者主页数据)
 )
 # 自定义User Agent（暂时仅对XHS有效）
-UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0'
+UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/131.0.0.0'
 
 # 是否开启 IP 代理
-ENABLE_IP_PROXY = False
+ENABLE_IP_PROXY = True
 
 # 未启用代理时的最大爬取间隔，单位秒（暂时仅对XHS有效）
 CRAWLER_MAX_SLEEP_SEC = 2
@@ -40,7 +38,7 @@ IP_PROXY_PROVIDER_NAME = "kuaidaili"
 # 设置False会打开一个浏览器
 # 小红书如果一直扫码登录不通过，打开浏览器手动过一下滑动验证码
 # 抖音如果一直提示失败，打开浏览器看下是否扫码登录之后出现了手机号验证，如果出现了手动过一下再试。
-HEADLESS = False
+HEADLESS = True
 
 # 是否保存登录状态
 SAVE_LOGIN_STATE = True
@@ -67,7 +65,7 @@ ENABLE_GET_IMAGES = False
 ENABLE_GET_COMMENTS = True
 
 # 爬取一级评论的数量控制(单视频/帖子)
-CRAWLER_MAX_COMMENTS_COUNT_SINGLENOTES = 10
+CRAWLER_MAX_COMMENTS_COUNT_SINGLENOTES = 600
 
 # 是否开启爬二级评论模式, 默认不开启爬二级评论
 # 老版本项目使用了 db, 则需参考 schema/tables.sql line 287 增加表字段
@@ -75,19 +73,12 @@ ENABLE_GET_SUB_COMMENTS = False
 
 # 指定小红书需要爬虫的笔记URL列表, 目前要携带xsec_token和xsec_source参数
 XHS_SPECIFIED_NOTE_URL_LIST = [
-    "https://www.xiaohongshu.com/explore/66fad51c000000001b0224b8?xsec_token=AB3rO-QopW5sgrJ41GwN01WCXh6yWPxjSoFI9D5JIMgKw=&xsec_source=pc_search"
-    # ........................
+    "https://www.xiaohongshu.com/explore/6739e243000000001a037043?xsec_token=AB0OlIe8q16hcEqI21bhLaI10VnHMQsYJkb33DYJntzLI=&xsec_source=pc_search&source=web_search_result_notes"
 ]
 
 # 指定小红书创作者ID列表
 XHS_CREATOR_ID_LIST = [
     "63e36c9a000000002703502b",
-    # ........................
-]
-
-# 指定Dy创作者ID列表(sec_id)
-DY_CREATOR_ID_LIST = [
-    "MS4wLjABAAAATJPY7LAlaa5X-c8uNdWkvz0jUGgpw4eeXIwu_8BhvqE",
     # ........................
 ]
 
