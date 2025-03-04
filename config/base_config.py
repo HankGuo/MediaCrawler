@@ -12,20 +12,20 @@
 # 基础配置
 PLATFORM = "xhs"
 KEYWORDS = "转运水晶"  # 关键词搜索配置，以英文逗号分隔
-LOGIN_TYPE = "cookie"  # qrcode or phone or cookie
-COOKIES = "abRequestId=f57ce515-02b3-51b1-91ce-e042fc16f3d1;a1=18e40ced23b382ti6daos4aoq9n5ugffzwxofjcge30000811176;webId=34393c2af6d1ce6e0174f3372cc71b81;gid=yYd48SdfWSuqyYd48SdfJEVSqDqYJ93Kf0lMCkd40lAjIlq827kiii888YyyyWK8WJ420J42;customerClientId=243236499342074;x-user-id-ark.xiaohongshu.com=6518e6b9000000002402e5db;x-user-id-creator.xiaohongshu.com=60056ad4000000000100b578;access-token-creator.xiaohongshu.com=customer.creator.AT-68c517469998758676156666wzoz3qp4jbt9j8vg;galaxy_creator_session_id=EyihCtuXOmrCkxpBGm0j7HgsYvzmPcajPjMK;galaxy.creator.beaker.session.id=1739244619516054800620;xsecappid=xhs-pc-web;webBuild=4.58.0;acw_tc=0a00d49217406475629751877e208786fef95c0c384140008ccbcf6195d508;web_session=040069b171299c56e52ecc64f5354bff9931c9;unread={%22ub%22:%2267bc7124000000000603a275%22%2C%22ue%22:%2267bfca670000000029027b53%22%2C%22uc%22:28};websectiga=10f9a40ba454a07755a08f27ef8194c53637eba4551cf9751c009d9afb564467;sec_poison_id=dc57f9f9-07fd-4074-a332-796260cad5ce;loadts=1740648379193"
+LOGIN_TYPE = "cookie"  # cookie登录
+COOKIES = "abRequestId=f57ce515-02b3-51b1-91ce-e042fc16f3d1;a1=18e40ced23b382ti6daos4aoq9n5ugffzwxofjcge30000811176;webId=34393c2af6d1ce6e0174f3372cc71b81;gid=yYd48SdfWSuqyYd48SdfJEVSqDqYJ93Kf0lMCkd40lAjIlq827kiii888YyyyWK8WJ420J42;customerClientId=243236499342074;x-user-id-ark.xiaohongshu.com=6518e6b9000000002402e5db;x-user-id-creator.xiaohongshu.com=60056ad4000000000100b578;access-token-creator.xiaohongshu.com=customer.creator.AT-68c517469998758676156666wzoz3qp4jbt9j8vg;galaxy_creator_session_id=EyihCtuXOmrCkxpBGm0j7HgsYvzmPcajPjMK;galaxy.creator.beaker.session.id=1739244619516054800620;xsecappid=xhs-pc-web;web_session=040069b171299c56e52ecc64f5354bff9931c9;acw_tc=0a00d5b517410768770214499e596ea70446d3db400aaef15dc31cb755e70b;webBuild=4.58.0;websectiga=f3d8eaee8a8c63016320d94a1bd00562d516a5417bc43a032a80cbf70f07d5c0;sec_poison_id=695f9d64-f5b1-419f-b4fb-8fc657b6a78c;unread={%22ub%22:%2267bf5aec000000002901d4c9%22%2C%22ue%22:%2267c19667000000000302837c%22%2C%22uc%22:24};loadts=1741076904630"
 # 具体值参见media_platform.xxx.field下的枚举值，暂时只支持小红书
 SORT_TYPE = "popularity_descending"
 CRAWLER_TYPE = (
     "detail"  # 爬取类型，search(关键词搜索) | detail(帖子详情)| creator(创作者主页数据)
 )
-# 自定义User Agent（暂时仅对XHS有效）
-UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/131.0.0.0'
+# 自定义User Agent
+UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'
 
 # 是否开启 IP 代理
-ENABLE_IP_PROXY = True
+ENABLE_IP_PROXY = False
 
-# 未启用代理时的最大爬取间隔，单位秒（暂时仅对XHS有效）
+# 未启用代理时的最大爬取间隔，单位秒
 CRAWLER_MAX_SLEEP_SEC = 2
 
 # 代理IP池数量
@@ -84,7 +84,7 @@ XHS_CREATOR_ID_LIST = [
 
 # 词云相关
 # 是否开启生成评论词云图
-ENABLE_GET_WORDCLOUD = True
+ENABLE_GET_WORDCLOUD = False
 # 自定义词语及其分组
 # 添加规则：xx:yy 其中xx为自定义添加的词组，yy为将xx该词组分到的组名。
 CUSTOM_WORDS = {

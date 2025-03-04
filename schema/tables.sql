@@ -23,7 +23,7 @@ CREATE TABLE `xhs_creator`
 -- ----------------------------
 -- Table structure for xhs_note
 -- ----------------------------
-DROP TABLE IF EXISTS `xhs_note`;
+DROP TABLE IF EXISTS `xhs_creator`;
 CREATE TABLE `xhs_note`
 (
     `id`               int         NOT NULL AUTO_INCREMENT COMMENT '自增ID',
